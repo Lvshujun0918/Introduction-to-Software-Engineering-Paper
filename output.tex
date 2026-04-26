@@ -621,6 +621,19 @@ $if(mathspec)$
 $else$
   \setmathfont[$for(mathfontoptions)$$mathfontoptions$$sep$,$endfor$]{latinmodern-math.otf}
 $endif$
+
+\usepackage{tasks}
+
+% 设置tasks环境的参数
+\settasks{
+    label = \Alph*.,
+    label-format = \bfseries,
+    item-indent = 3em,
+    label-width = 1.5em,
+    column-sep = 2em,
+    after-item-skip = 0pt
+}
+
 %%% 图片保持比例
 \setkeys{Gin}{width=0.78\textwidth,keepaspectratio}
 %%% 压缩行
@@ -738,7 +751,7 @@ $endif$
 $if(title)$
 \begin{center}
   \noindent 
-  \begin{adjustbox}{width=0.95\textwidth,keepaspectratio=false,height=\totalheight}
+  \begin{adjustbox}{max width=0.95\textwidth,keepaspectratio=false,height=\totalheight}
       \fontsize{15pt}{22pt}\selectfont\heiti 
       \textbf{$title$}
   \end{adjustbox}\\
